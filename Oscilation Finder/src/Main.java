@@ -9,7 +9,7 @@ import java.util.List;
 
 
 public class Main {
-	private static double SPEED_THRESHOLD_KM_H = 100.0;
+	private static double SPEED_THRESHOLD_KM_H = 150.0;
 	
 	public static void main(String[] args) {
 		List<List<String>> records = new ArrayList<List<String>>();
@@ -37,6 +37,8 @@ public class Main {
 						 found = true;
 						 System.out.println(previous.lat + "," + previous.lng + "," + previous.date);
 						 System.out.println(current.lat + "," + current.lng + "," + current.date);
+						 System.out.println("Distance: " + current.calculateDistance(previous) + " km");
+						 System.out.println("Time Diff: " + current.calculateTimeDiff(previous) + " s");
 						 System.out.println(speed + "km/h");
 						 System.out.println("------------------------------------------------------");
 					 }

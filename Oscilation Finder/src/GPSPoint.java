@@ -48,5 +48,13 @@ public class GPSPoint {
 		  
 		return speed_kph;
 	}
+	
+	public Double calculateDistance(GPSPoint previous) {
+		return calcularDistanciaMetrosByLongLat(previous.lng, lng, previous.lat, lat) / 1000.0;
+	}
+	
+	public Double calculateTimeDiff(GPSPoint previous) {
+		return (date.getTime() - previous.date.getTime()) / 1000.0;
+	}
 
 }
